@@ -1,56 +1,506 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Homepage</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <title>Panpacific University - ECOAST (IT, CpE, CS)</title>
+    <!-- Tailwind CSS for robust modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#3f6c27',
+                        brandBlue: '#253d73',
+                        brandGreenDark: '#31541f',
+                        brandBlueDark: '#1b2d55',
+                        brandAccent: '#f4b82c',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
-    <!-- Header / Navigation -->
-    <header>
-        <div class="container nav-container">
-            <h1 class="logo">EduHome</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brandGreen selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand / Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brandBlue to-brandGreen flex items-center justify-center text-white font-black text-xl shadow-md">
+                        PU
+                    </div>
+                    <div>
+                        <span class="block font-extrabold text-lg text-brandBlue tracking-tight leading-tight">Panpacific University</span>
+                        <span class="block text-xs font-semibold text-brandGreen tracking-widest uppercase">ECOAST Program</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                    <a href="#home" class="text-slate-600 hover:text-brandBlue transition-colors">Home</a>
+                    <a href="#about" class="text-slate-600 hover:text-brandBlue transition-colors">About ECOAST</a>
+                    <a href="#programs" class="text-slate-600 hover:text-brandBlue transition-colors">Programs (IT, CpE, CS)</a>
+                    <a href="#features" class="text-slate-600 hover:text-brandBlue transition-colors">Why Choose Us</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-xl bg-brandBlue text-white font-semibold hover:bg-brandBlueDark transition-all shadow-sm hover:shadow">Get in Touch</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Toggle Menu" class="p-2 rounded-lg text-slate-600 hover:text-brandBlue hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#home" class="block py-2 px-3 rounded-lg text-slate-700 hover:bg-slate-100 font-medium">Home</a>
+            <a href="#about" class="block py-2 px-3 rounded-lg text-slate-700 hover:bg-slate-100 font-medium">About ECOAST</a>
+            <a href="#programs" class="block py-2 px-3 rounded-lg text-slate-700 hover:bg-slate-100 font-medium">Programs (IT, CpE, CS)</a>
+            <a href="#features" class="block py-2 px-3 rounded-lg text-slate-700 hover:bg-slate-100 font-medium">Why Choose Us</a>
+            <a href="#contact" class="block text-center py-2.5 mt-2 rounded-xl bg-brandBlue text-white font-semibold shadow">Get in Touch</a>
         </div>
     </header>
 
-    <!-- Hero Section (Home) -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h2>Welcome to Our School</h2>
-            <p>Empowering minds, shaping futures, and inspiring excellence every single day.</p>
-            <a href="#about" class="btn">Learn More</a>
-        </div>
-        <div class="hero-image">
-            <!-- Replace this src with your school image later -->
-            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop" alt="School Campus">
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden bg-gradient-to-b from-slate-100 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Content -->
+                <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-brandGreen text-xs font-bold tracking-wide uppercase">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Center of Technology Excellence</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-brandBlue tracking-tight leading-tight">
+                        Shaping the Future of Tech at <span class="text-brandGreen">Panpacific University</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 font-normal leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        Welcome to the <strong class="text-slate-800">ECOAST</strong> department—empowering the next generation of innovators through world-class education in Information Technology, Computer Engineering, and Computer Science.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#programs" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brandBlue hover:bg-brandBlueDark text-white font-semibold text-center shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2">
+                            <span>Explore Programs</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="#about" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-semibold text-center transition-all duration-300 flex items-center justify-center space-x-2">
+                            <span>Learn More</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Quick stats bar -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-200 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <span class="block text-2xl lg:text-3xl font-extrabold text-brandGreen">3</span>
+                            <span class="text-xs text-slate-500 font-medium">Core Majors</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl lg:text-3xl font-extrabold text-brandBlue">100%</span>
+                            <span class="text-xs text-slate-500 font-medium">Industry Aligned</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl lg:text-3xl font-extrabold text-brandGreen">Top-Tier</span>
+                            <span class="text-xs text-slate-500 font-medium">Facilities</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Centered Hero Image with Adaptive Resizing -->
+                <div class="lg:col-span-6 flex justify-center">
+                    <div class="hero-img-container shadow-2xl border-4 border-white bg-slate-200">
+                        <!-- Main hero image with fallback and object-fit cover -->
+                        <img src="PUimg.webp" 
+                             alt="Panpacific University Campus and Students" 
+                             onerror="this.src='https://placehold.co/900x600/3f6c27/ffffff?text=Panpacific+University'">
+                        <!-- Floating badge overlay -->
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <!-- Short Body Content (About Section) -->
-    <section id="about" class="about">
-        <div class="container">
-            <h3>About Our Institution</h3>
-            <p>
-                Founded with a vision to deliver exceptional education, our school fosters a vibrant community of learners, thinkers, and innovators. We provide a supportive, inclusive, and challenging environment where every student is encouraged to discover their passion and reach their fullest potential.
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brandGreen text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-emerald-50">About Our Department</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-brandBlue mt-3 mb-4">Empowering Minds, Inspiring Innovation</h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    The School of Information Technology, Computer Engineering, and Computer Science (ECOAST) at Panpacific University stands as a pillar of academic excellence, equipping students with cutting-edge technical expertise, rigorous problem-solving skills, and global leadership capabilities.
+                </p>
+            </div>
+
+            <!-- Two Column Layout with Adaptive Images -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brandGreen/10 flex items-center justify-center text-brandGreen text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-1">Our Mission</h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                To deliver premier computing and engineering education that fosters creativity, robust technical competencies, and ethical responsibility to serve national and global communities.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brandBlue/10 flex items-center justify-center text-brandBlue text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-1">Our Vision</h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                To be a recognized center of excellence in technological education, research, and industry collaboration across the region and beyond.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 flex items-center justify-center text-amber-600 text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-1">Industry Integration</h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                We bridge classroom theory with real-world practice through active partnerships with top tech corporations, hackathons, and immersive internships.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dual image showcase with adaptive fit -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <div class="overflow-hidden rounded-2xl shadow-lg h-56 bg-slate-200">
+                            <img src="https://placehold.co/500x400/3f6c27/ffffff?text=Modern+Labs" 
+                                 alt="Modern Computer Laboratories" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/500x400/253d73/ffffff?text=Labs'">
+                        </div>
+                        <div class="overflow-hidden rounded-2xl shadow-lg h-40 bg-slate-200">
+                            <img src="https://placehold.co/500x300/253d73/ffffff?text=Collaboration" 
+                                 alt="Student Collaboration" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/500x300/3f6c27/ffffff?text=Students'">
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-6">
+                        <div class="overflow-hidden rounded-2xl shadow-lg h-40 bg-slate-200">
+                            <img src="https://placehold.co/500x300/f4b82c/253d73?text=Coding+Workshops" 
+                                 alt="Coding Workshop" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/500x300/3f6c27/ffffff?text=Coding'">
+                        </div>
+                        <div class="overflow-hidden rounded-2xl shadow-lg h-56 bg-slate-200">
+                            <img src="https://placehold.co/500x400/3f6c27/ffffff?text=Innovation" 
+                                 alt="Tech Innovation" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/500x400/253d73/ffffff?text=Innovation'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section (IT, CpE, CS) -->
+    <section id="programs" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brandBlue text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-blue-50">Academic Pillars</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-brandBlue mt-3 mb-4">The ECOAST Degree Programs</h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Tailored curricula designed to match industry standards, spanning software creation, hardware engineering, and systems administration.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Program 1: IT -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200 group flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="card-img-container bg-slate-200 relative">
+                        <img src="https://placehold.co/600x400/253d73/ffffff?text=Information+Technology" 
+                             alt="Information Technology"
+                             onerror="this.src='https://placehold.co/600x400/3f6c27/ffffff?text=BSIT'">
+                        <div class="absolute top-4 right-4 bg-brandBlue text-white text-xs font-bold px-3 py-1 rounded-lg shadow">
+                            BSIT
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-brandBlue/10 text-brandBlue flex items-center justify-center font-bold text-lg mb-4">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brandBlue mb-2">Information Technology</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Focuses on the deployment, management, cybersecurity, cloud architecture, and administration of enterprise systems, networks, and web applications.
+                            </p>
+                        </div>
+                        <ul class="space-y-2 text-xs font-medium text-slate-700 border-t border-slate-100 pt-4">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-brandGreen"></i><span>Network Administration & Cloud</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-brandGreen"></i><span>Cybersecurity & Ethical Hacking</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-brandGreen"></i><span>Enterprise System Integration</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Program 2: CpE -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200 group flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="card-img-container bg-slate-200 relative">
+                        <img src="https://placehold.co/600x400/3f6c27/ffffff?text=Computer+Engineering" 
+                             alt="Computer Engineering"
+                             onerror="this.src='https://placehold.co/600x400/253d73/ffffff?text=BSCPE'">
+                        <div class="absolute top-4 right-4 bg-brandGreen text-white text-xs font-bold px-3 py-1 rounded-lg shadow">
+                            BSCPE
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-brandGreen/10 text-brandGreen flex items-center justify-center font-bold text-lg mb-4">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brandBlue mb-2">Computer Engineering</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Combines electrical engineering and computer science to develop integrated hardware and software solutions, robotics, and IoT systems.
+                            </p>
+                        </div>
+                        <ul class="space-y-2 text-xs font-medium text-slate-700 border-t border-slate-100 pt-4">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-brandGreen"></i><span>Microcontroller & IoT Design</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-brandGreen"></i><span>Embedded Systems Programming</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-brandGreen"></i><span>Robotics & Hardware Interfacing</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Program 3: CS -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200 group flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="card-img-container bg-slate-200 relative">
+                        <img src="https://placehold.co/600x400/1b2d55/ffffff?text=Computer+Science" 
+                             alt="Computer Science"
+                             onerror="this.src='https://placehold.co/600x400/3f6c27/ffffff?text=BSCS'">
+                        <div class="absolute top-4 right-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-lg shadow">
+                            BSCS
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold text-lg mb-4">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brandBlue mb-2">Computer Science</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Focuses on algorithmic problem solving, artificial intelligence, software engineering, machine learning, and advanced computation theory.
+                            </p>
+                        </div>
+                        <ul class="space-y-2 text-xs font-medium text-slate-700 border-t border-slate-100 pt-4">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-brandGreen"></i><span>Artificial Intelligence & ML</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-brandGreen"></i><span>Advanced Algorithms & Data Structures</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-brandGreen"></i><span>Full-Stack Software Architecture</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brandGreen text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-emerald-50">Competitive Advantage</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-brandBlue mt-3 mb-4">Why Panpacific University ECOAST?</h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Discover the unique attributes that make our department the premier destination for aspiring technology professionals.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Feature 1 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brandGreen transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-brandGreen text-white flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Expert Faculty</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Learn from seasoned industry practitioners, certified professionals, and passionate researchers dedicated to your growth.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brandBlue transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-brandBlue text-white flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">State-of-the-Art Labs</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Access high-performance workstations, robotics toolkits, modern networking hardware, and specialized software environments.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-500 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Robust Internship Pipeline</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Secure internships and job placements with leading local and international tech firms through our extensive placement cell.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brandGreen transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-brandGreenDark text-white flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-users-rectangle"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Vibrant Student Community</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Participate in hackathons, coding clubs, tech summits, and collaborative projects that build lifelong networks.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="contact" class="py-20 gradient-banner text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <span class="px-3 py-1 rounded-full bg-white/10 text-emerald-300 text-xs font-bold tracking-widest uppercase">Start Your Journey Today</span>
+            <h2 class="text-3xl sm:text-5xl font-black text-brandBlue mt-4 mb-6">Ready to Build the Future with ECOAST?</h2>
+            <p class="text-slate-200 text-brandBlue sm:text-lg max-w-2xl mx-auto mb-8">
+                Join Panpacific University and enroll in IT, CpE, or CS. Take the first step toward a rewarding, high-impact career in technology.
             </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="mailto:ecoast@panpacificu.edu.ph" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brandGreen hover:bg-emerald-700 text-white font-bold shadow-xl transition-all flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Inquire via Email</span>
+                </a>
+                <a href="#home" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold backdrop-blur-md transition-all flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-arrow-up"></i>
+                    <span>Back to Top</span>
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 EduHome School. All rights reserved.</p>
+    <!-- Professional Footer -->
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brandBlue to-brandGreen flex items-center justify-center text-white font-black text-lg">
+                            PU
+                        </div>
+                        <div>
+                            <span class="block font-bold text-white text-base">Panpacific University</span>
+                            <span class="block text-xs font-medium text-emerald-400">ECOAST Program</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+                        Committed to excellence in Information Technology, Computer Engineering, and Computer Science education. Empowering learners to innovate and lead.
+                    </p>
+                    <div class="flex items-center space-x-3 pt-2">
+                        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-brandBlue text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                        <a href="#" aria-label="Twitter" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-brandBlue text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-twitter text-sm"></i></a>
+                        <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-brandBlue text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-brandBlue text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About ECOAST</a></li>
+                        <li><a href="#programs" class="hover:text-white transition-colors">Programs (IT, CpE, CS)</a></li>
+                        <li><a href="#features" class="hover:text-white transition-colors">Why Choose Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Programs -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Majors</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#programs" class="hover:text-white transition-colors">BS Information Technology</a></li>
+                        <li><a href="#programs" class="hover:text-white transition-colors">BS Computer Engineering</a></li>
+                        <li><a href="#programs" class="hover:text-white transition-colors">BS Computer Science</a></li>
+                        <li><a href="#programs" class="hover:text-white transition-colors">Tech Certifications</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Info -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Contact Us</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-location-dot text-brandGreen mt-1"></i>
+                            <span>Panpacific University, Urdaneta City, Pangasinan, Philippines</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-envelope text-brandGreen"></i>
+                            <span>ecoast@panpacificu.edu.ph</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-phone text-brandGreen"></i>
+                            <span>+63 (75) 123-4567</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 space-y-4 sm:space-y-0">
+                <p>&copy; 2026 Panpacific University. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400 transition-colors">Terms of Service</a>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <script>
+        // Toggle Mobile Menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
